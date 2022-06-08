@@ -2,7 +2,7 @@
 <?php include "$configDir\config\database.php"; ?>
 <br>Poniżej widoczne Wpisane Rachunki <br>
 
-<form id="selectform" name="selectSomething" action="" method="POST" class="form-group">
+<form id="selectform" name="selectSomething" action="" method="GET" class="form-group">
 
     <div class="form-group">
         <select class="form-control" id="Bill" name="Bill">
@@ -35,8 +35,8 @@
 </form>
 <?php
 
-if(isset($_POST['submit2']) || isset($_POST['submit3'])) {
-    $nameTableFromOption = $_POST['Bill'];
+if(isset($_GET['submit2']) || isset($_POST['submit3'])) {
+    $nameTableFromOption = $_GET['Bill'];
     //echo $nameTableFromOption . " XXXXXXXXXXX";
     $showdataBill = "SELECT * FROM `$nameTableFromOption`;";
     if (mysqli_query($conn, $showdataBill)) {

@@ -46,7 +46,11 @@ if (isset($_POST['submit3'])) {
     {
         $fullsql = "INSERT INTO `$nameTableFromOption` (`ID`, `kwota`, `who`)   VALUES('', '$sumToBill','$PaidBy')";
         if (mysqli_query($conn, $fullsql)) {
-            echo "New record added successfullydziwne";
+            echo "Dodałeś produkt do tego rachunku";
+                if(isset($_POST['submit3']))
+                {
+                echo "<meta http-equiv='refresh' content='0'>";
+                }
         } else {
             echo "Error: " . $fullsql . "<br> " . mysqli_error($conn);
         }
