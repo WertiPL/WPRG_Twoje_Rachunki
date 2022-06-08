@@ -1,4 +1,5 @@
 <?php
+include '..\config\database.php';
 echo "
 <section>
 

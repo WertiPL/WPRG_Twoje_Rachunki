@@ -2,7 +2,7 @@
 $mainDir = "\WPRG\WPRG_Twoje_Rachunki";
 
 $partialDir ='..\_partial';  ?>
-<?php  include "..\config\database.php"; ?>
+<?php  include '..\config\database.php'; ?>
 
 <!doctype html>
 <html lang='pl'>
