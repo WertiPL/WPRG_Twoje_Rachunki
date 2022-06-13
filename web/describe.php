@@ -1,18 +1,15 @@
-<?php $partialDir = dirname(__FILE__) .'\_partial'; ?>
-<?php $srcDir = dirname(__FILE__) .'\src'; ?>
-<?php $configDir = dirname(__FILE__) .'\config'; ?>
+<?php $mainDir = '.\..'; ?>
+<?php $partialDir = $mainDir . '\_partial'; ?>
+<?php $srcDir = $mainDir . '\src'; ?>
+<?php $configDir = $mainDir . '\config'; ?>
 
 <!doctype html>
 <html lang="pl">
 
-<?php require $partialDir."\head.php"; ?>
+<?php require $partialDir . "\head.php"; ?>
 <body>
 
-<header>
-    <h1>Witaj użytkowniku na tej stronie dodasz nowe rachunki do bazy danych</h1>
-    <?php require $partialDir."\menu.php"; ?>
-
-</header>
+<?php require $partialDir."\header.php"; ?>
 <article>
     <div class=WordSection1>
 

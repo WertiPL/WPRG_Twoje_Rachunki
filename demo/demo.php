@@ -7,11 +7,7 @@
     <?php require "$partialDir\head.php"; ?>
     <link href="demo.css" rel="stylesheet">
 </head>
-<header>
-    <h1>Strona demonstarcyjna</h1>
-    <?php require "{$partialDir}/menu.php"; ?>
-
-</header>
+<?php require $partialDir."\header.php"; ?>
 
 
 <?php require "{$configDir}\config\database.php"; ?>

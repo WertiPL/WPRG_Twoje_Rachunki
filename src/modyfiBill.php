@@ -1,5 +1,5 @@
 <?php
-include "..\config\database.php";
+require "..\config\database.php";
 echo"
 <form id='modform' action='' method='post' class='form-group' >
     <div class='form-group'>

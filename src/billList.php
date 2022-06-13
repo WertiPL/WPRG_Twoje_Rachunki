@@ -1,6 +1,4 @@
 <?php
-$mainDir = "\WPRG\WPRG_Twoje_Rachunki";
-
 $partialDir ='..\_partial';  ?>
 <?php  include '..\config\database.php'; ?>
 
@@ -27,12 +25,7 @@ $partialDir ='..\_partial';  ?>
  </head>
 <body>
 
-<header>
-
-    <h1>Witaj użytkowniku</h1>
-
-    <?php require "{$partialDir}\menu.php"; ?>
-</header>
+<?php require $partialDir."\header.php"; ?>
 
 <section>
     <div class="toclick" onclick="showUnderdiv('#selectform')">

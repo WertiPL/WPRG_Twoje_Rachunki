@@ -1,11 +1,13 @@
 <?php
 $mainDir = "\WPRG\WPRG_Twoje_Rachunki";
 $thisDir = $mainDir."\_partial";
-$index = $mainDir."\index.php";
+$main = $mainDir."\index.php";
+$index = $mainDir."\app.php";
 $billList = $mainDir."\src\billList.php";
 $demo = $mainDir."\demo\demo.php";
-$statsHtml = $mainDir.'\stats.php';
-$describe = $mainDir.'\describe.php';
+$statsHtml = $mainDir.'\stats\stats.php';
+$describe = $mainDir.'\web\describe.php';
+
 echo "
 
 <div class='classic' id='classicNav'>
