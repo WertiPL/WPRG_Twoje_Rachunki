@@ -1,5 +1,6 @@
 
 #Aplikacja Twoje rachunki
+
 Opis
 Aplikacja służy do przechowania historii rachunków/wydatków z możliwością statystyk w
 tym poszczególnych produktów na każdym rachunku.
