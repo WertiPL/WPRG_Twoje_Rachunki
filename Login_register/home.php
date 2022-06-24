@@ -20,7 +20,6 @@ if (!$conn) {
 		<meta charset="UTF-8" =/>
 	</head>
 <body>
-
 			<?php
 				$id = $_SESSION['user'];
 				$sql = $conn->prepare("SELECT * FROM `user` WHERE `user_id`='$id'");

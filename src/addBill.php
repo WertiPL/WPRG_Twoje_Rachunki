@@ -61,7 +61,7 @@ if(isset($_POST['submit']))
 
     VALUES ('','$date', '$nameform$date', '$sum','$HOWPAID')";
 
-    $newTable="CREATE TABLE `moneybilans`.`".$nameform.$date."`( `ID` INT AUTO_INCREMENT , `kwota` INT , `who` VARCHAR(30), PRIMARY KEY (`ID`))";
+    $newTable="CREATE TABLE `moneybilans`.`".$nameform.$date."`( `ID` INT AUTO_INCREMENT , `kwota` FLOAT , `who` VARCHAR(30), PRIMARY KEY (`ID`))";
     $firstValueToTable="INSERT INTO `moneybilans`.`$nameform$date` (`ID`, `kwota`, `who`)  VALUES('','$sum','$HOWPAID')";
 
     if (mysqli_query($conn, $sql)) {

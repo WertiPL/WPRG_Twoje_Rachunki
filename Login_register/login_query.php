@@ -25,13 +25,13 @@ if(ISSET($_POST['login'])) {
         } else {
             echo "
 				<script>alert('złe dane')</script>
-				<script>window.location =  ";echo $loginDir.'login.php</script>
+				<script>window.location =  ";echo $loginDir.'\login.php</script>
 				';
         }
     } else {
         echo "
 				<script>alert('zapomniałeś o moich polach')</script>
-				<script>window.location = '<?php $loginDir ?>login.php'</script>
+				<script>window.location = ";echo $loginDir .'\login.php';echo "</script>
 			";
     }
 }

@@ -9,7 +9,7 @@ let createValue=()=>{
         ['mąka',4.2,'User2']
     ];
 
-    let a='lidl',b='100',c='2021-12-27',d='User1';
+    let a='lidl',b='100',c='2022-04-27',d='User1';
     let test = new bill(
         a,
         b,
@@ -28,7 +28,7 @@ let createValue=()=>{
 
     a='biedronka';
     b='250';
-    c='2021-12-28';
+    c='2022-04-28';
     d='User2';
      test = new bill(
         a,

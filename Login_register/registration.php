@@ -1,3 +1,14 @@
+<?php
+$mainDir = "\WPRG\WPRG_Twoje_Rachunki";
+$loginDir = $mainDir. '\login_register';
+$db_username = 'root';
+$db_password = '';
+$logconn = new PDO('mysql:host=localhost;dbname=wprg', $db_username, $db_password);
+if (!$logconn) {
+    die("Fatal Error: Connection Failed!");
+}
+?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pl">
 	<head>
@@ -27,8 +38,7 @@
 				<br />
 
 					<button  name="register">Register</button>
-
-				<a href="\login.php">Login</a>
+                <a href="<?php echo $loginDir; ?>\login.php">Login</a>
 			</form>
 		</div>
 	</div>

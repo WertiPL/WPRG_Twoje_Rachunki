@@ -10,7 +10,7 @@ if (!$conn) {
 }
  
 	if(ISSET($_POST['register'])){
-		if($_POST['firstname'] != "" || $_POST['username'] != "" || $_POST['$country'] != "" || $_POST['password'] != ""){
+		if($_POST['firstname'] != "" || $_POST['username'] != "" || $_POST['country'] != "" || $_POST['password'] != ""){
 			try{
 				$firstname = $_POST['firstname'];
 				$secondname = $_POST['secondname'];
@@ -25,12 +25,16 @@ if (!$conn) {
 			}
 			$_SESSION['message']=array("text"=>"User dodany.","alert"=>"info");
 			$conn = null;
-			header('location:'. $loginDir .'login.php');
+			header('location:'. $loginDir .'\login.php');
 		}else{
-			echo "
+            echo "
+                <script>window.location = "; echo $loginDir."\registration.php</script>
 				<script>alert('Wypełnij moje pola')</script>
-				<script>window.location = "; echo $loginDir."registration.php'</script>
+				
 			";
+
+
 		}
+        header('location: '. $loginDir .'\registration.php');
 	}
 ?>
