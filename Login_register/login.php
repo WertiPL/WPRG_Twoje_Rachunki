@@ -37,7 +37,6 @@ if (!$logconn) {
     					<label>Username</label>
     					<input type="text"  name="username" />
     				</div>
-    					<label>Password</label>
     					<input type="password"  name="password" />
     				<br />
     					<button  name="login">Login</button>

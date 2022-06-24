@@ -34,6 +34,14 @@ if (isset($_POST['submit3'])) {
         $sqlBoth2 = "INSERT INTO `$nameTableFromOption` (`ID`, `kwota`, `who`) VALUES('', '$half','User2')";
         if (mysqli_query($conn, $sqlBoth1)) {
             echo "Dodałeś produkt do tego rachunku"."User1";
+            echo "<meta http-equiv='refresh' content='0'>";
+
+            $dom = new DOMDocument;
+            $dom->loadHTML();
+            $form = $dom->getElementsByTagName('#modform');
+
+            $form->setAttribute('class', $form->getAttribute('class').' showdiv');
+            $html = $dom->saveHTML();
         } else {
             echo "Error: " . $sqlBoth1 . "<br>" . mysqli_error($conn);
         }
@@ -41,6 +49,14 @@ if (isset($_POST['submit3'])) {
             echo "Dodałeś produkt do tego rachunku"."User2";
         } else {
             echo "Error: " . $sqlBoth2 . "<br>" . mysqli_error($conn);
+            echo "<meta http-equiv='refresh' content='0'>";
+
+            $dom = new DOMDocument;
+            $dom->loadHTML();
+            $form = $dom->getElementsByTagName('#modform');
+
+            $form->setAttribute('class', $form->getAttribute('class').' showdiv');
+            $html = $dom->saveHTML();
         }
     }
     else

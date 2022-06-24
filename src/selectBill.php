@@ -64,9 +64,18 @@ if(isset($_GET['submit2']) || isset($_POST['submit3'])) {
         $deletePosition = "DELETE FROM `$nameTableFromOption` WHERE ID = $idToDelete;";
         if (mysqli_query($conn, $deletePosition)) {
             echo "Udało się, Usunąłeś pozycje ".$idToDelete;
+            echo "<meta http-equiv='refresh' content='0'>";
+
+            $dom = new DOMDocument;
+            $dom->loadHTML();
+            $form = $dom->getElementsByTagName('#modform');
+
+            $form->setAttribute('class', $form->getAttribute('class').' showdiv');
+            $html = $dom->saveHTML();
             if(isset($_POST['submit3']))
             {
                 echo "<meta http-equiv='refresh' content='0'>";
+
             }
         } else {
             echo "Error: " . $showdataBill . "<br>" . mysqli_error($conn);
