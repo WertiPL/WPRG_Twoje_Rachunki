@@ -15,7 +15,7 @@
 
             while($row = mysqli_fetch_row($result))
             {
-                echo "<option  value='$row[2]'  >"."Data: ". $row[1]." Nazwa: ".$row[2]." Kwota: ".$row[3]."</option>
+                echo "<option  value='$row[2]'  >"."Data: ". $row[1]." Nazwa: ".$row[2]." Kwota: ".$row[3]." Placil: ".$row[4]."</option>
                 
 
 <br>";

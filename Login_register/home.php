@@ -11,7 +11,7 @@ if (!$conn) {
 	session_start();
 	
 	if(!ISSET($_SESSION['user'])){
-		header('location: '. $loginDir .'login.php');
+		header('location: '. $loginDir .'\login.php');
 	}
 ?>
 <html lang="pl">
