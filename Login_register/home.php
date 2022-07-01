@@ -16,7 +16,6 @@ if (!$conn) {
 ?>
 <html lang="pl">
 	<head>
-
 		<meta charset="UTF-8" =/>
 	</head>
 <body>
@@ -26,9 +25,9 @@ if (!$conn) {
 				$sql->execute();
 				$fetch = $sql->fetch();
 			?>
-			<h4><?php echo $fetch['firstname']." ". $fetch['secondname']?></h4>
-			<h4><?php echo $fetch['country']." ". $fetch['username']?></h4>
-			<h4><?php echo $fetch['password']?></h4>
+			<h4><?php echo "Imie: ". $fetch['firstname']." Nazwisko: ". $fetch['secondname']?></h4>
+			<h4><?php echo "kraj: ".$fetch['country']." Login  ". $fetch['username']?></h4>
+			<!--<h4><?php /*echo $fetch['password']*/?></h4>-->
 			<a href = "<?php echo $loginDir; ?>\logout.php">Logout</a>
 		</div>
 	</div>
