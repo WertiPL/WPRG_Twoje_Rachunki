@@ -1,5 +1,14 @@
 <?php $configDir = dirname(__DIR__); ?>
-<?php include "$configDir\config\database.php"; ?>
+<?php
+$mainDir = "\WPRG\WPRG_Twoje_Rachunki";
+$loginDir = $mainDir. '\login_register';
+$db_username = 'root';
+$db_password = '';
+$logconn = new PDO('mysql:host=localhost;dbname=wprg', $db_username, $db_password);
+if (!$logconn) {
+    die("Fatal Error: Connection Failed!");
+}
+?>
 <br>Poniżej widoczne Wpisane Rachunki <br>
 
 <form id="selectform" name="selectSomething" action="" method="GET" class="form-group">
@@ -10,7 +19,7 @@
 
 
             $q = "SELECT id,DATA, `NAME-BILL`,SUM,HOWPAID FROM bills";
-            $result = mysqli_query($conn, $q) or die("Problemy z odczytem danych!");
+            $result = $logconn->query(q) or die("Problemy z odczytem danych!");
 
             while ($row = mysqli_fetch_row($result)) {
                 echo "<option  value='$row[2]'  >" . "Data: " . $row[1] . " Nazwa: " . $row[2] . " Kwota: " . $row[3] . " Placil: " . $row[4] . "</option>
@@ -35,14 +44,14 @@
 
 if (isset($_GET['submit2']) || isset($_POST['submit3'])) {
 $nameTableFromOption = $_GET['Bill'];
-$showdataBill = "SELECT * FROM `$nameTableFromOption`;";
-if (mysqli_query($conn, $showdataBill)) {
+$showdataBill = "SELECT * FROM {$nameTableFromOption};";
+if ($logconn->query($showdataBill)) {
     echo "New record showed successfully";
 } else {
-    echo "Error: " . $showdataBill . "<br>" . mysqli_error($conn);
+    echo "Error: " . $showdataBill . "<br>" . $logconn->errorInfo();
 }
 
-$result3 = mysqli_query($conn, $showdataBill) or die("Problemy z odczytem danych!");
+$result3 = $logconn->query($showdataBill) or die("Problemy z odczytem danych!");
 echo "<form name='selectSomething' action='' method='POST' class='form-group'>";
 while ($row = mysqli_fetch_row($result3)) {
     echo "";
@@ -57,8 +66,8 @@ while ($row = mysqli_fetch_row($result3)) {
 echo "</form>";
 if (isset($_POST['deletequery'])) {
     $idToDelete = $_POST['test'];
-    $deletePosition = "DELETE FROM `$nameTableFromOption` WHERE ID = $idToDelete;";
-    if (mysqli_query($conn, $deletePosition)) {
+    $deletePosition = "DELETE FROM `{$nameTableFromOption}` WHERE ID = {$idToDelete};";
+    if ($logconn->query($deletePosition)) {
         echo "Udało się, Usunąłeś pozycje " . $idToDelete;
         echo "<meta http-equiv='refresh' content='0'>";
 
@@ -73,7 +82,7 @@ if (isset($_POST['deletequery'])) {
 
         }
     } else {
-        echo "Error: " . $showdataBill . "<br>" . mysqli_error($conn);
+        echo "Error: " . $showdataBill . "<br>" . $logconn->errorInfo();
     }
 
 }

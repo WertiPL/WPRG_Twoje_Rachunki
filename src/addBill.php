@@ -41,10 +41,7 @@ echo "
 ";
 
 
-$nameform =  $_POST['name'];
-$sum =  $_POST['sum'];
-$HOWPAID =  $_POST['HOWPAID'];
-$date =  $_POST['date'];
+
 
 echo "Dziś jest: ".(new DateTime())->format( 'Y-m-d')."<br>";
 $date_bill = (new DateTime())->format('Y-m-d');
@@ -53,13 +50,20 @@ echo "<br>";
 
 
 
+$nameform =  $_POST['name']??NULL;
+$sum =  $_POST['sum']??NULL;
+$HOWPAID =  $_POST['HOWPAID']??NULL;
+$date =  $_POST['date']??NULL;
 
 
 if(isset($_POST['submit']))
 {
+
     $sql = "INSERT INTO bills (id, DATA,`NAME-BILL`, SUM,HOWPAID)
 
     VALUES ('','$date', '$nameform$date', '$sum','$HOWPAID')";
+
+
 
     $newTable="CREATE TABLE `moneybilans`.`".$nameform.$date."`( `ID` INT AUTO_INCREMENT , `kwota` FLOAT , `who` VARCHAR(30), PRIMARY KEY (`ID`))";
     $firstValueToTable="INSERT INTO `moneybilans`.`$nameform$date` (`ID`, `kwota`, `who`)  VALUES('','$sum','$HOWPAID')";

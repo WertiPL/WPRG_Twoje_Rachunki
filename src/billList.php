@@ -1,6 +1,6 @@
 <?php
 $partialDir ='..\_partial';  ?>
-<?php  include '..\config\database.php'; ?>
+
 
 <!doctype html>
 <html lang='pl'>

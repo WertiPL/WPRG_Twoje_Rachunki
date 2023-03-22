@@ -16,7 +16,7 @@ if(ISSET($_POST['login'])) {
         $password = $_POST['password'];
         $sql = "SELECT * FROM `user` WHERE `username`=? AND `password`=? ";
         $query = $conn->prepare($sql);
-        $query->execute(array($username, $password));
+        $query->execute(array(["%{$username}%","%{$password}%"]));
         $row = $query->rowCount();
         $fetch = $query->fetch();
         if ($row > 0) {

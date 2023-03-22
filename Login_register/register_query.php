@@ -18,7 +18,7 @@ if (!$conn) {
 				$username = $_POST['username'];
 				$password = $_POST['password'];
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = "INSERT INTO `user` VALUES ('', '$firstname', '$secondname','$country', '$username', '$password')";
+				$sql = "INSERT INTO `user` VALUES ('', '{$firstname}', '{$secondname}','{$country}', '{$username}', '{$password}')";
 				$conn->exec($sql);
 			}catch(PDOException $e){
 				echo $e->getMessage();

@@ -21,7 +21,7 @@ if (!$conn) {
 <body>
 			<?php
 				$id = $_SESSION['user'];
-				$sql = $conn->prepare("SELECT * FROM `user` WHERE `user_id`='$id'");
+				$sql = $conn->prepare("SELECT * FROM `user` WHERE `user_id`={$id}");
 				$sql->execute();
 				$fetch = $sql->fetch();
 			?>
